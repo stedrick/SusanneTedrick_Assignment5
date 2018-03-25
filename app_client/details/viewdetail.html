@@ -1,0 +1,26 @@
+<div id="banner" class="page-header">
+    <div class="row">
+        <div class="col-lg-6"></div>
+        <h1>{{ vm.pageHeader.title }}<small>{{ vm.pageHeader.strapline }}</small></h1>
+    </div>
+</div>
+<div>
+    <h3><a href="/additem/">ADD ITEM</a></h3>
+</div><br/>
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <label for="filter">Filter Results</label>
+        <input id="filter" type="text" ,="" name="filter" ng-model="textFilter"/>
+        <div class="error">{{ vm.message }}</div><br/>
+        <div class="row list-group">
+            <div ng-repeat="item in vm.data.detail | filter : textFilter" class="col-xs-12 list-group-item">
+                <h4><a href="/item/" {{="" item._id="" }}="">{{ item.name }}</a><span class="badge pull-right badge-default">{{ item.startingPrice}}</span></h4>
+                <p class="description">{{ item.description }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <p class="lead">{{ vm.sidebar.content }}</p>
+    </div>
+    <footer-generic></footer-generic>
+</div>

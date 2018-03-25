@@ -1,0 +1,26 @@
+<div id="banner" class="page-header">
+    <div class="row">
+        <div class="col-lg-6"></div>
+        <h1>{{ vm.pageHeader.title }}<small>{{ vm.pageHeader.strapline }}</small></h1>
+    </div>
+</div>
+<p>{{vm.message}}</p>
+<form ng-submit="vm.onSubmit()" role="form">
+    <div class="form-group">
+        <label for="name">Item Name:</label>
+        <input id="name" name="name" ng-model="vm.itemForm.name" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input id="description" name="description" ng-model="vm.itemForm.description" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="startingPrice">Starting Price:</label>
+        <input id="startingPrice" type="number" name="startingPrice" ng-model="vm.itemForm.startingPrice" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<div class="col-xs-12 col-sm-4">
+    <p class="lead">{{ vm.sidebar.content }}</p>
+</div>
+<footer-generic></footer-generic>
